@@ -25,6 +25,8 @@ group :development, :test do
   gem 'jquery-turbolinks'
   #for user integration
   gem 'devise'
+  #for authorization of users
+  gem 'pundit'
 end
 group :development do
   gem 'web-console', '>= 3.3.0'
