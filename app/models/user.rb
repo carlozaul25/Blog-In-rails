@@ -5,5 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
          #relationships
-         has_many :blogs, dependent: destroy:
+         has_many :blogs, dependent: :destroy
 end

@@ -27,6 +27,10 @@ group :development, :test do
   gem 'devise'
   #for authorization of users
   gem 'pundit'
+  # for image attachments
+  # gem "paperclip", "~> 5.2.1" 
+  # # for WYSIWYG editor
+  gem 'ckeditor', '4.1.3'
 end
 group :development do
   gem 'web-console', '>= 3.3.0'
