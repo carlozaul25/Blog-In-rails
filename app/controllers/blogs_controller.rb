@@ -2,29 +2,26 @@ class BlogsController < ApplicationController
   before_action :authenticate_user!, only: [:edit, :new, :update, :destroy]
   before_action :set_blog, only: [:show, :edit, :update, :destroy]
 
-  # GET /blogs
-  # GET /blogs.json
+
   def index
     @blogs = Blog.all
   end
 
-  # GET /blogs/1
-  # GET /blogs/1.json
+
   def show
   end
 
-  # GET /blogs/new
+
   def new
     @blog = Blog.new
   end
 
-  # GET /blogs/1/edit
+
   def edit
     authorize @blog 
   end
 
-  # POST /blogs
-  # POST /blogs.json
+
   def create
     @blog = Blog.new(blog_params)
     @blog.user = current_user
@@ -40,8 +37,6 @@ class BlogsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /blogs/1
-  # PATCH/PUT /blogs/1.json
   def update
     authorize @blog
     respond_to do |format|
@@ -55,10 +50,9 @@ class BlogsController < ApplicationController
     end
   end
 
-  # DELETE /blogs/1
-  # DELETE /blogs/1.json
+ 
   def destroy
-    authorize @blog 
+    # authorize @blog 
     @blog.destroy
     respond_to do |format|
       format.html { redirect_to blogs_url, notice: 'Blog was successfully destroyed.' }
@@ -67,12 +61,12 @@ class BlogsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
+    
     def set_blog
       @blog = Blog.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
+    
     def blog_params
       params.require(:blog).permit(:title, :content, :publish)
     end
